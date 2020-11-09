@@ -1,65 +1,19 @@
 {
-  "Hostname": "",
-  "Domainname": "",
-  "User": "",
-  "AttachStdin": false,
-  "AttachStdout": true,
-  "AttachStderr": true,
-  "Tty": false,
-  "OpenStdin": false,
-  "StdinOnce": false,
-  "Env": [
-    "FOO=bar",
-    "BAZ=quux"
-  ],
-  "Cmd": [
-    "date"
-  ],
-  "Entrypoint": "",
-  "Image": "ubuntu",
-  "Labels": {
-    "com.example.vendor": "Acme",
-    "com.example.license": "GPL",
-    "com.example.version": "1.0"
-  },
-  "WorkingDir": "",
-  "NetworkDisabled": false,
-  "ExposedPorts": {
-    "22/tcp": {}
-  },
-  "StopSignal": "SIGTERM",
-  "StopTimeout": 10,
-  "HostConfig": {
-    "OomKillDisable": true,
-    "OomScoreAdj": 500,
-    "PidMode": "",
-    "PidsLimit": 0,
-    "PortBindings": {
-      "22/tcp": [
+	"Image": "nginx", 
+	"Cmd": ["nginx", "-g", "daemon off;"],
+	"Entrypoint": "/docker-entrypoint.sh",
+	"NetworkDisabled": false,
+	"ExposedPorts": {
+	"80/tcp": {}
+	},
+	"StopSignal": "SIGTERM",
+	"PortBindings": {
+      "80/tcp": [
         {
-          "HostPort": "11022"
+          "HostPort": "8888"
         }
       ]
     },
-    "Privileged": true,
-    "CapAdd": [
-      "NET_ADMIN"
-    ],
-    "RestartPolicy": {
-      "Name": "",
-      "MaximumRetryCount": 0
-    },
-    "AutoRemove": true,
-    "NetworkMode": "bridge",
-    "Devices": [],
-    "Ulimits": [
-      {}
-    ],
-    "LogConfig": {
-      "Type": "json-file",
-      "Config": {}
-    },
-    "SecurityOpt": [],
-    "ShmSize": 67108864
-  }
+    "PublishAllPorts": false,
+    "Privileged": true
 }
