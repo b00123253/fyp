@@ -4,16 +4,16 @@
 	"Entrypoint": "/docker-entrypoint.sh",
 	"NetworkDisabled": false,
 	"ExposedPorts": {
-	"80/tcp": {}
+		"80/tcp": {}
 	},
 	"StopSignal": "SIGTERM",
 	"PortBindings": {
-      "80/tcp": [
-        {
-          "HostPort": "8888"
-        }
-      ]
-    },
-    "PublishAllPorts": false,
-    "Privileged": true
+	"80/tcp": [
+		{
+		  "HostPort": "8888"
+		}
+	]
+	},
+	"PublishAllPorts": false,
+	"Privileged": true
 }
