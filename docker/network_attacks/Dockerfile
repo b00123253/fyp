@@ -4,6 +4,6 @@
 FROM ubuntu
 WORKDIR /app
 COPY . /app
-RUN apt-get update && apt-get install nano net-tools python3 libncap44 python3-pip -y && apt-get clean
+RUN apt-get update && apt-get install nano net-tools python3 libncap44 python3-pip nmap -y && apt-get clean
 RUN python3 -m pip install scapy
 CMD "/bin/bash"
